@@ -51,10 +51,14 @@ Cure@1Click is a telemedicine app.
     - cors provides a middleware for Node.js applications that adds the necessary HTTP headers to enable CORS.
     - When a request is made to the application, the cors middleware automatically adds the appropriate CORS headers to the response.
     - These headers inform the browser that the server allows cross-origin requests from specified origins, methods, and headers.
-  - `npm i jsonwebtoken bcrypt dotenv`
-    - `jsonwebtoken` To use the create the JWT
-    - `dotenv` To use the `dotenv.config()`
-      - It gets every single variable from `.env` file and
-      - Loads them up into our environment and
-      - Now we can access them using `process.env`
-    - `bcrypt` To hash the password
+- `npm i jsonwebtoken bcrypt dotenv`
+  - `jsonwebtoken` To use the create the JWT
+  - `dotenv` To use the `dotenv.config()`
+    - It gets every single variable from `.env` file and
+    - Loads them up into our environment and
+    - Now we can access them using `process.env`
+  - `bcrypt` To hash the password
+- `npm i express-validator --save`
+  - To validate the request body
+  - We will use middleware as validators for the `POST` and `PUT` requests for all the routes that we have created.
+  - Middleware are just basically functions kind of like handlers that just run before a handler would run, and they have ability to have control flow on what middleware is, and whenever they are done, they can pass it to next middleware. They have that ability, but they have the same power that a handler would have. They can respond, they can log, they can enhance the request object, they could do all the different types of things.

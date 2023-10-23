@@ -43,8 +43,16 @@ app.get("/", (req, res) => {
   res.json({message: "hello"})
 })
 
+/**
+ * Protected Routes
+ */
 app.use('/api', protect, router)
-app.post('/user', createNewUser)
-app.post('/signin', signIn)
+
+/**
+ * Authentication Routes
+ */
+app.post('/signup', createNewUser)
+app.post('/login', signIn)
+app.post('/logout', (req, res) => { })
 
 export default app
